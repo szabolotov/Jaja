@@ -1,0 +1,38 @@
+<meta charset = "utf-8">
+<script>
+var hello = confirm ("Начнем?");
+if  (hello == true){
+var answers = 0;
+var q1 = prompt  ("2+2 = ");
+      if (q1 == 4)
+    {alert ("good");
+    answers++;}
+      else {
+      alert ("incorrect");
+    }
+var q2 = prompt ("3+3 = ");
+      if (q2 == 6)
+    {alert ("good");
+    answers++;}
+      else {
+      alert ("incorrect");
+    }
+var q3 = prompt ("4+5 = ");
+      if (q3 == 9)
+  {alert ("good");
+  answers++;}
+      else {
+    alert ("incorrect");
+  }
+  if (answers == 1){
+document.write("Вы набрали " + answers + " очко! "); }
+if (answers == 2) {
+document.write("Вы набрали " + answers + " очкa! ");}
+if (answers == 3){
+  document.write("Вы набрали " + answers + " очков! ");
+}
+  }
+  else {
+document.write("Приходите ещё");
+  }
+</script>
