@@ -3,22 +3,25 @@
 var hello = confirm ("Начнем?");
 if  (hello == true){
 var answers = 0;
-var q1 = prompt  ("2+2 = ");
-      if (q1 == 4)
+var zaza = "";
+
+var zaza = prompt  ("2+2 = ");
+      if (zaza == 4){
+      alert ("good");
+      answers++;
+  }
+      else {
+      alert ("incorrect");
+    }
+var zaza = prompt ("3+3 = ");
+      if (zaza == 6)
     {alert ("good");
     answers++;}
       else {
       alert ("incorrect");
     }
-var q2 = prompt ("3+3 = ");
-      if (q2 == 6)
-    {alert ("good");
-    answers++;}
-      else {
-      alert ("incorrect");
-    }
-var q3 = prompt ("4+5 = ");
-      if (q3 == 9)
+var zaza = prompt ("4+5 = ");
+      if (zaza == 9)
   {alert ("good");
   answers++;}
       else {
@@ -33,6 +36,6 @@ if (answers == 3){
 }
   }
   else {
-document.write("Приходите ещё");
+document.write("Приходите ещё (нет)");
   }
 </script>
