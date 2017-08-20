@@ -1,0 +1,13 @@
+<meta charset= "utf-8">
+<script>
+
+var summa = parseInt (prompt ("Ввведите сумму"));
+var procent = parseInt (prompt ("Введите процент"));
+var god = parseInt (prompt ("Введите срок"));
+
+
+for (var i=1; i <=god; i++){
+    summa = summa + summa * procent / 100;
+    alert ("Прошло лет:" + i + ",сумма на счету:" + Math.floor (summa));
+}
+</script>
