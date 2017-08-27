@@ -1,0 +1,44 @@
+<script>
+
+function getRandomInt(min,max){
+    return Math.floor(Math.random()*(max-min+1))+min;
+}
+
+function getCard(){
+    var cards = ['6','7','8','9','10','J','Q','K','A'];
+    return cards[getRandomInt(0,cards.length-1)];
+}
+
+//получить сумму очков у игрока или дилера
+function getSum(arr){
+    var summa = 0;
+    for(var i=0; i<arr.length; i++)
+        summa += getPointCard(arr[i]);
+    return summa;
+}
+
+//это вспомогательная функция для подсчета суммы очков
+// для данной карты возвращает ее ценность
+//J,Q,K - 10, A-11
+function getPointCard(card){
+    var cards = ['6','7','8','9','10','J','Q','K','A'];
+    for(var i=0; i<cards.length;i++){
+        if(cards[i]==card){
+            if(i>=0 && i<=4) //для карт от '6' до '10'
+                return i+6; //i-индекс, а +6 - нужно для получения очков
+                            //т.е. для '10' - i=4, а очков i+6=10
+            else if(i>4 && i<8) //для карт 'J','Q','K' индекс i =5,6,7
+                return 10;      //для всех картинок, кроме туза - 10 очков
+            else
+                return 11; //i=8 это туз 'A' очков 11
+        }
+    }
+
+}
+
+var dealer = [getCard()];
+var player = [getCard(),getCard()];
+
+document.write("Дилер: " + dealer.join(' ') + " Игрок: " + player.join(' ')+"<br>");
+document.write("Очков: дилер - " + getSum(dealer) + ", игрок - " + getSum(player));
+</script>

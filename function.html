@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<script>
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random()*(max-min+1))+min;
+}
+
+function getCard() {
+  var cards = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+  return cards [getRandomInt(0,cards.lenght -1)];
+}
+
+function getPointCard(card) {
+  var cards = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']; // 0-12 элементов массива
+  for (var i=0; i<cards.lenght; i++) {
+    if (cards[i]==card){
+      if (i>=0 && i<=8)
+        return i+2;
+      else if (i>8 && i<12)
+        return 10;
+      else
+        return 11;
+    }
+  }
+}
+
+function getSum(arr){
+  var summa = 0;
+  for(var i=0; i<arr.length; i++)
+    summa += getPointCard (arr[i]);
+  return summa;
+}
+
+var dealer = [getCard()];
+var player = [getCard(),getCard()];
+
+document.write("Дилер: " + dealer.join(' ') + " Игрок: " + player.join(' ')+"<br>");
+document.write("Очков: дилер - " + getSum(dealer) + ", игрок - " + getSum(player));
+</script>
